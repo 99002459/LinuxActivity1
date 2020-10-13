@@ -1,14 +1,15 @@
-.PHONY:clean 
-NAME: test
+.PHONY:clean  build run
+NAME= test
 
-
-SRC: mystring.c\
+SRC= mystring.c\
 myutils.c\
 bitmask.c\
 test.c
 
-RUN:
+build:
 	gcc $(SRC) -o $(NAME).out
 
+run:
+	./$(NAME).out
 clean:
-	rm -rf $(RUN) *.out
+	rm *.out
